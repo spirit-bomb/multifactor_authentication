@@ -10,7 +10,7 @@ const app=express();
 app.use(express.json());
 app.use(cookp());
 app.use(cors({
-    origin:[process.env.FRONTEND_URI],
+    origin:[process.env.FRONTEND_URI,'http://localhost:5173'],
     method:["GET","POST","PUT","DELETE"],
     credentials:true,
 }));

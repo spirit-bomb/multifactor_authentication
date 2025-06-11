@@ -78,7 +78,12 @@ export const loginUser=async(req,res)=>{
         exist.otpSentAt = Date.now()
         await exist.save();
         await sendOtp(exist.email,otp);
-        res.cookie("authEmail",email,{httpOnly:true,maxAge:10 * 60 * 1000});
+        res.cookie("authEmail",email,{
+            httpOnly:true,
+            maxAge:10 * 60 * 1000,
+            secure:true,
+            sameSite:"None",
+        });
         return res.json({
             message:"otp sent"
         })
@@ -115,6 +120,8 @@ export const verifyOtp = async (req, res) => {
     await user.save();
     res.cookie("token",token,{
         httpOnly:true,
+        secure:true,
+        sameSite:"None",
     }).clearCookie('authEmail').json({
         success: true,
         message: 'Login successful'
