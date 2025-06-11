@@ -1,5 +1,5 @@
 import { useState,useContext } from 'react';
-import Card from '../components/Card';
+import Card from '../components/Card.jsx';
 import {context} from '../main.jsx';
 import img1 from '../assets/img1.png';
 import api from '../api/axios';

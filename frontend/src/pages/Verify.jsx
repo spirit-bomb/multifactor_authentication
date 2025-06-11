@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import Card from '../components/Card';
+import Card from '../components/Card.jsx';
 import api from '../api/axios';
 import { useNavigate } from 'react-router';
 import { context } from '../main.jsx';
