@@ -38,7 +38,8 @@ app.get("/",(req,res)=>{
     res.send("hello hello")
 })
 
+const port=process.env.PORT||3000
 connectDB();
-app.listen(3000,'localhost',()=>{
-    console.log('Server started');
+app.listen(port,'localhost',()=>{
+    console.log(`Server started`);
 })
