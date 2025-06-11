@@ -17,7 +17,7 @@ const AppWrapper = () => {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/api/user');
+                const res = await axios.get('https://multifactor-authentication-em5l.onrender.com/api/user');
                 if (res.data.success) {
                     setIsAuthenticated(true);
                 }
